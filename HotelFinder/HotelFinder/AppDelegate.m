@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "Hotel.h"
+#import "Room.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +26,26 @@
   ViewController *dummyRoot = [[ViewController alloc]init];
   
   self.window.rootViewController = dummyRoot;
+  
+//  Hotel *hotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.managedObjectContext];
+//  
+//  hotel.name =  @"Four Seasons";
+//  hotel.stars = @5;
+//  
+//  
+//  NSError *saveError;
+//  BOOL result = [self.managedObjectContext save:&saveError];
+//  
+//  if (!result) {
+//    NSLog(@" %@", saveError.localizedDescription);
+//  }
+  
+  NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
+  
+  NSError *fetchError;
+  NSArray *results = [self.managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
+  
+  NSLog(@" %lu", (unsigned long)results.count);
   
   return YES;
 }
