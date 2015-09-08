@@ -2,7 +2,7 @@
 //  Hotel.m
 //  
 //
-//  Created by Jeffrey Jacka on 9/7/15.
+//  Created by Jeffrey Jacka on 9/8/15.
 //
 //
 
@@ -14,6 +14,7 @@
 
 @dynamic name;
 @dynamic stars;
+@dynamic location;
 @dynamic room;
 
 @end

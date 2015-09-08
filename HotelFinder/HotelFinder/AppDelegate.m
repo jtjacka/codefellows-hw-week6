@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "Hotel.h"
 #import "Room.h"
+#import "HoteListViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,23 +24,71 @@
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   [self.window makeKeyAndVisible];
   
-  ViewController *dummyRoot = [[ViewController alloc]init];
+  HoteListViewController *hotelListVC = [[HoteListViewController alloc]init];
   
-  self.window.rootViewController = dummyRoot;
+  UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:hotelListVC];
   
+  self.window.rootViewController = navController;
+  
+//  //Create Some Hotel Data
 //  Hotel *hotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.managedObjectContext];
 //  
 //  hotel.name =  @"Four Seasons";
+//  hotel.location = @"Waterfront";
 //  hotel.stars = @5;
 //  
-//  
+//
 //  NSError *saveError;
 //  BOOL result = [self.managedObjectContext save:&saveError];
 //  
 //  if (!result) {
 //    NSLog(@" %@", saveError.localizedDescription);
 //  }
-  
+//  
+//  //Add Room to Hotel
+//  Room *fourSeasonRoom = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+//  
+//  fourSeasonRoom.number = [NSNumber numberWithInt:101];
+//  fourSeasonRoom.beds = [NSNumber numberWithInt:2];
+//  fourSeasonRoom.rate = [NSNumber numberWithDouble:299.99];
+//  fourSeasonRoom.hotel = hotel;
+//  
+//  NSError *roomSaveError;
+//  BOOL roomResult = [self.managedObjectContext save:&roomSaveError];
+//  if (!roomResult) {
+//    NSLog(@" %@", roomSaveError.localizedDescription);
+//  }
+//  
+//  
+//  //Create Some Hotel Data
+//  Hotel *hotel2 = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.managedObjectContext];
+//  
+//  hotel2.name =  @"Inn At The Market";
+//  hotel2.location = @"Pike Place Market";
+//  hotel2.stars = @4;
+//  
+//  
+//  NSError *saveError2;
+//  BOOL result2 = [self.managedObjectContext save:&saveError2];
+//  
+//  if (!result2) {
+//    NSLog(@" %@", saveError.localizedDescription);
+//  }
+//  
+//  //Add Room to Hotel
+//  Room *innRoom = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+//  
+//  innRoom.number = [NSNumber numberWithInt:101];
+//  innRoom.beds = [NSNumber numberWithInt:2];
+//  innRoom.rate = [NSNumber numberWithDouble:299.99];
+//  innRoom.hotel = hotel;
+//  
+//  NSError *roomSaveError2;
+//  BOOL roomResult2 = [self.managedObjectContext save:&roomSaveError2];
+//  if (!roomResult2) {
+//    NSLog(@" %@", roomSaveError2.localizedDescription);
+//  }
+//
   NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
   
   NSError *fetchError;

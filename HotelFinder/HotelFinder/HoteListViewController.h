@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HoteListViewController : UIViewController
+@interface HoteListViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 
 @end
