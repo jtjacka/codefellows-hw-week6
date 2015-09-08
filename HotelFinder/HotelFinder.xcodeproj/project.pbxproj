@@ -19,6 +19,7 @@
 		1FF290041B9F563D0030ADDC /* Reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF28FFE1B9F563D0030ADDC /* Reservation.m */; };
 		1FF290051B9F563D0030ADDC /* Guest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF290001B9F563D0030ADDC /* Guest.m */; };
 		1FF290061B9F563D0030ADDC /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF290021B9F563D0030ADDC /* Hotel.m */; };
+		1FF290091B9F6A760030ADDC /* RoomListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF290081B9F6A760030ADDC /* RoomListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		1FF290001B9F563D0030ADDC /* Guest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Guest.m; sourceTree = "<group>"; };
 		1FF290011B9F563D0030ADDC /* Hotel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hotel.h; sourceTree = "<group>"; };
 		1FF290021B9F563D0030ADDC /* Hotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hotel.m; sourceTree = "<group>"; };
+		1FF290071B9F6A760030ADDC /* RoomListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomListViewController.h; sourceTree = "<group>"; };
+		1FF290081B9F6A760030ADDC /* RoomListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 		1F3E9E071B9E43A700EDFFDB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1FF290071B9F6A760030ADDC /* RoomListViewController.h */,
+				1FF290081B9F6A760030ADDC /* RoomListViewController.m */,
 				1F3E9E081B9E47B900EDFFDB /* HoteListViewController.h */,
 				1F3E9E091B9E47B900EDFFDB /* HoteListViewController.m */,
 				1F3E9DE61B9E28E600EDFFDB /* ViewController.h */,
@@ -270,6 +275,7 @@
 				1FF290061B9F563D0030ADDC /* Hotel.m in Sources */,
 				1FF290041B9F563D0030ADDC /* Reservation.m in Sources */,
 				1FF290031B9F563D0030ADDC /* Room.m in Sources */,
+				1FF290091B9F6A760030ADDC /* RoomListViewController.m in Sources */,
 				1FF290051B9F563D0030ADDC /* Guest.m in Sources */,
 				1F3E9DE51B9E28E600EDFFDB /* HotelFinder.xcdatamodeld in Sources */,
 				1F3E9DE21B9E28E600EDFFDB /* AppDelegate.m in Sources */,

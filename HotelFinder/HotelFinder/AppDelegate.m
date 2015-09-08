@@ -26,6 +26,7 @@
   
   HoteListViewController *hotelListVC = [[HoteListViewController alloc]init];
   
+  //[hotelListVC setManagedObjectContext:[self managedObjectContext]];
   UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:hotelListVC];
   
   self.window.rootViewController = navController;
@@ -89,12 +90,7 @@
 //    NSLog(@" %@", roomSaveError2.localizedDescription);
 //  }
 //
-  NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
-  
-  NSError *fetchError;
-  NSArray *results = [self.managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
-  
-  NSLog(@" %lu", (unsigned long)results.count);
+
   
   return YES;
 }

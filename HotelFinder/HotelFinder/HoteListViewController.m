@@ -8,28 +8,48 @@
 
 #import "HoteListViewController.h"
 #import "Hotel.h"
+#import "AppDelegate.h"
+#import "RoomListViewController.h"
 
 @interface HoteListViewController ()
 
-@property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) NSArray *hotels;
 
 @end
 
 @implementation HoteListViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-  self.tableView = [[UITableView alloc]init];
-  self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-  [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-  [self.tableView reloadData];
+  //Fetch Stored Data
+  AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+  NSManagedObjectContext* context = appDelegate.managedObjectContext;
+  
+  NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
+  NSError *fetchError;
+  self.hotels = [context executeFetchRequest:fetchRequest error:&fetchError];
+  
+  
+  UIView *rootView = [[UIView alloc] init];
+  rootView.backgroundColor = [UIColor whiteColor];
+  
+  UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+  
+  tableView = [[UITableView alloc]init];
+  tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+  [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
   
   //Is this proper syntax?
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
+  tableView.dataSource = self;
+  tableView.delegate = self;
   
-  [self.view addSubview:self.tableView];
+  
+  [tableView reloadData];
+  
+  self.view = rootView;
+  [self.view addSubview:tableView];
   
     // Do any additional setup after loading the view.
 }
@@ -41,12 +61,15 @@
 
 #pragma mark - UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 1;
+  return self.hotels.count;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
   
+  Hotel *currentHotel = self.hotels[indexPath.row];
+  
+  cell.textLabel.text = currentHotel.name;
   
   return cell;
 }
@@ -54,17 +77,15 @@
 
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  RoomListViewController *destinationVC = [[RoomListViewController alloc] init];
   
+  [self.navigationController pushViewController:destinationVC animated:true];
 }
 
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
+
 
 
 @end
