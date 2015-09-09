@@ -14,7 +14,7 @@
 @implementation Reservation
 
 @dynamic date;
-@dynamic room;
 @dynamic guest;
+@dynamic room;
 
 @end

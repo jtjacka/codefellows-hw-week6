@@ -7,6 +7,7 @@
 //
 
 #import "Guest.h"
+#import "Reservation.h"
 
 
 @implementation Guest

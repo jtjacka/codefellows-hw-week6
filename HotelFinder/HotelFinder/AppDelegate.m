@@ -31,66 +31,7 @@
   
   self.window.rootViewController = navController;
   
-//  //Create Some Hotel Data
-//  Hotel *hotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.managedObjectContext];
-//  
-//  hotel.name =  @"Four Seasons";
-//  hotel.location = @"Waterfront";
-//  hotel.stars = @5;
-//  
-//
-//  NSError *saveError;
-//  BOOL result = [self.managedObjectContext save:&saveError];
-//  
-//  if (!result) {
-//    NSLog(@" %@", saveError.localizedDescription);
-//  }
-//  
-//  //Add Room to Hotel
-//  Room *fourSeasonRoom = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
-//  
-//  fourSeasonRoom.number = [NSNumber numberWithInt:101];
-//  fourSeasonRoom.beds = [NSNumber numberWithInt:2];
-//  fourSeasonRoom.rate = [NSNumber numberWithDouble:299.99];
-//  fourSeasonRoom.hotel = hotel;
-//  
-//  NSError *roomSaveError;
-//  BOOL roomResult = [self.managedObjectContext save:&roomSaveError];
-//  if (!roomResult) {
-//    NSLog(@" %@", roomSaveError.localizedDescription);
-//  }
-//  
-//  
-//  //Create Some Hotel Data
-//  Hotel *hotel2 = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.managedObjectContext];
-//  
-//  hotel2.name =  @"Inn At The Market";
-//  hotel2.location = @"Pike Place Market";
-//  hotel2.stars = @4;
-//  
-//  
-//  NSError *saveError2;
-//  BOOL result2 = [self.managedObjectContext save:&saveError2];
-//  
-//  if (!result2) {
-//    NSLog(@" %@", saveError.localizedDescription);
-//  }
-//  
-//  //Add Room to Hotel
-//  Room *innRoom = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
-//  
-//  innRoom.number = [NSNumber numberWithInt:101];
-//  innRoom.beds = [NSNumber numberWithInt:2];
-//  innRoom.rate = [NSNumber numberWithDouble:299.99];
-//  innRoom.hotel = hotel;
-//  
-//  NSError *roomSaveError2;
-//  BOOL roomResult2 = [self.managedObjectContext save:&roomSaveError2];
-//  if (!roomResult2) {
-//    NSLog(@" %@", roomSaveError2.localizedDescription);
-//  }
-//
-
+  [self seedCoreDataIfNeeded];
   
   return YES;
 }
@@ -117,6 +58,56 @@
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   // Saves changes in the application's managed object context before the application terminates.
   [self saveContext];
+}
+
+#pragma mark - Seed Core Data If Needed
+-(void) seedCoreDataIfNeeded {
+  NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"hotels" ofType:@"json"];
+  NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
+  
+  NSError *jsonError;
+  NSDictionary *rootObject = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&jsonError];
+  
+  if (jsonError) {
+    return;
+  }
+  
+  if([rootObject isKindOfClass:[NSDictionary class]]) {
+    NSDictionary *hotels = rootObject[@"Hotels"];
+    
+    for (id hotel in hotels) {
+      Hotel *newHotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.managedObjectContext];
+      newHotel.name = hotel[@"name"];
+      newHotel.location = hotel[@"location"];
+      newHotel.stars = hotel[@"stars"];
+      
+      NSDictionary *rooms = hotel[@"rooms"];
+      
+      for (id room in rooms) {
+        Room *newRoom = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+        
+        newRoom.number = room[@"number"];
+        newRoom.beds = room[@"beds"];
+        newRoom.rate = room[@"rate"];
+        
+        //Save Room
+        NSError *saveRoomError;
+        BOOL roomResult = [self.managedObjectContext save:&saveRoomError];
+        if (!roomResult) {
+          NSLog(@" %@",saveRoomError.localizedDescription);
+        }
+        [newHotel addRoomsObject:newRoom];
+      }
+      
+      //Save Hotel
+      NSError *saveHotelError;
+      BOOL hotelResult = [self.managedObjectContext save:&saveHotelError];
+      if (!hotelResult) {
+        NSLog(@" %@",saveHotelError.localizedDescription);
+      }
+      
+    }
+  }
 }
 
 #pragma mark - Core Data stack

@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class NSManagedObject;
+@class Reservation;
 
 @interface Guest : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSManagedObject *reservation;
+@property (nonatomic, retain) Reservation *reservation;
 
 @end

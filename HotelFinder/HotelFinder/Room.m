@@ -13,8 +13,8 @@
 
 @implementation Room
 
-@dynamic number;
 @dynamic beds;
+@dynamic number;
 @dynamic rate;
 @dynamic hotel;
 @dynamic reservation;
