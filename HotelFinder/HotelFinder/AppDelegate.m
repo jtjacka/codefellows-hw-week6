@@ -89,6 +89,7 @@
         newRoom.number = room[@"number"];
         newRoom.beds = room[@"beds"];
         newRoom.rate = room[@"rate"];
+        newRoom.hotel = newHotel;
         
         //Save Room
         NSError *saveRoomError;

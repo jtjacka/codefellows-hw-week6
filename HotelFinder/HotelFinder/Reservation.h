@@ -2,7 +2,7 @@
 //  Reservation.h
 //  
 //
-//  Created by Jeffrey Jacka on 9/8/15.
+//  Created by Jeffrey Jacka on 9/9/15.
 //
 //
 
@@ -13,7 +13,8 @@
 
 @interface Reservation : NSManagedObject
 
-@property (nonatomic, retain) NSDate * date;
+@property (nonatomic, retain) NSDate * startDate;
+@property (nonatomic, retain) NSDate * endDate;
 @property (nonatomic, retain) Guest *guest;
 @property (nonatomic, retain) Room *room;
 

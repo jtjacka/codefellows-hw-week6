@@ -2,7 +2,7 @@
 //  Hotel.h
 //  
 //
-//  Created by Jeffrey Jacka on 9/8/15.
+//  Created by Jeffrey Jacka on 9/9/15.
 //
 //
 

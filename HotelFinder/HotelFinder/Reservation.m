@@ -2,7 +2,7 @@
 //  Reservation.m
 //  
 //
-//  Created by Jeffrey Jacka on 9/8/15.
+//  Created by Jeffrey Jacka on 9/9/15.
 //
 //
 
@@ -13,7 +13,8 @@
 
 @implementation Reservation
 
-@dynamic date;
+@dynamic startDate;
+@dynamic endDate;
 @dynamic guest;
 @dynamic room;
 

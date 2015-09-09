@@ -7,14 +7,23 @@
 //
 
 #import "RoomListViewController.h"
+#import "AppDelegate.h"
 
 @interface RoomListViewController ()
+
+@property (strong, nonatomic) UITableView *tableView;
 
 @end
 
 @implementation RoomListViewController
 
 - (void)viewDidLoad {
+  
+  //Fetch Stored Data
+  AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+  NSManagedObjectContext* context = appDelegate.managedObjectContext;
+  
+  
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
