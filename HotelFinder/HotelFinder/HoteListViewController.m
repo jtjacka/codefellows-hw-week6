@@ -10,6 +10,7 @@
 #import "Hotel.h"
 #import "AppDelegate.h"
 #import "RoomListViewController.h"
+#import "CoreDataStack.h"
 
 @interface HoteListViewController ()
 
@@ -24,12 +25,12 @@
     [super viewDidLoad];
   
   //Fetch Stored Data
-  AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-  NSManagedObjectContext* context = appDelegate.managedObjectContext;
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+
   
   NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
   NSError *fetchError;
-  self.hotels = [context executeFetchRequest:fetchRequest error:&fetchError];
+ self.hotels = [appDelegate.coreDataStack.managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
   
   
   UIView *rootView = [[UIView alloc] init];
@@ -83,11 +84,6 @@
   
   [self.navigationController pushViewController:destinationVC animated:true];
 }
-
-
-#pragma mark - Navigation
-
-
 
 
 @end
