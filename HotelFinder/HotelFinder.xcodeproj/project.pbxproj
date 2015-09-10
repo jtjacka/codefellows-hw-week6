@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F13D19F1BA20FD800FBDF80 /* ReservationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F13D19E1BA20FD800FBDF80 /* ReservationService.m */; };
 		1F3E9DDF1B9E28E600EDFFDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3E9DDE1B9E28E600EDFFDB /* main.m */; };
 		1F3E9DE21B9E28E600EDFFDB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3E9DE11B9E28E600EDFFDB /* AppDelegate.m */; };
 		1F3E9DE51B9E28E600EDFFDB /* HotelFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F3E9DE31B9E28E600EDFFDB /* HotelFinder.xcdatamodeld */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F13D19D1BA20FD800FBDF80 /* ReservationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationService.h; sourceTree = "<group>"; };
+		1F13D19E1BA20FD800FBDF80 /* ReservationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationService.m; sourceTree = "<group>"; };
 		1F3E9DD91B9E28E600EDFFDB /* HotelFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F3E9DDD1B9E28E600EDFFDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F3E9DDE1B9E28E600EDFFDB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 		1F3E9E051B9E439D00EDFFDB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1F13D19D1BA20FD800FBDF80 /* ReservationService.h */,
+				1F13D19E1BA20FD800FBDF80 /* ReservationService.m */,
 				1F41FF2C1BA0D2C800545CAD /* HotelService.h */,
 				1F41FF2D1BA0D2C800545CAD /* HotelService.m */,
 				1F41FF291BA0D24100545CAD /* CoreDataStack.h */,
@@ -303,6 +308,7 @@
 			files = (
 				7B9434E41BA13B7200957CBE /* BookRoomViewController.m in Sources */,
 				1F41FF211BA09EC500545CAD /* Hotel.m in Sources */,
+				1F13D19F1BA20FD800FBDF80 /* ReservationService.m in Sources */,
 				1FF290091B9F6A760030ADDC /* RoomListViewController.m in Sources */,
 				1F3E9DE51B9E28E600EDFFDB /* HotelFinder.xcdatamodeld in Sources */,
 				1F41FF311BA0D54A00545CAD /* MainMenuViewController.m in Sources */,

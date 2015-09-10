@@ -38,14 +38,11 @@
   
   UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
   
-  tableView = [[UITableView alloc]init];
   tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
   [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
   
-  //Is this proper syntax?
   tableView.dataSource = self;
   tableView.delegate = self;
-  
   
   [tableView reloadData];
   
