@@ -79,6 +79,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   RoomListViewController *destinationVC = [[RoomListViewController alloc] init];
   
+  destinationVC.currentHotel = self.hotels[indexPath.row];
+  
   [self.navigationController pushViewController:destinationVC animated:true];
 }
 

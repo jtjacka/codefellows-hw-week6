@@ -62,51 +62,56 @@
 
 #pragma mark - Seed Core Data If Needed
 -(void) seedCoreDataIfNeeded {
-  NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"hotels" ofType:@"json"];
-  NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
+  NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
+  NSError *fetchError;
+  NSInteger count = [self.managedObjectContext countForFetchRequest:fetchRequest error:&fetchError];
   
-  NSError *jsonError;
-  NSDictionary *rootObject = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&jsonError];
-  
-  if (jsonError) {
-    return;
-  }
-  
-  if([rootObject isKindOfClass:[NSDictionary class]]) {
-    NSDictionary *hotels = rootObject[@"Hotels"];
+  if (count == 0) {
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"hotels" ofType:@"json"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
     
-    for (id hotel in hotels) {
-      Hotel *newHotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.managedObjectContext];
-      newHotel.name = hotel[@"name"];
-      newHotel.location = hotel[@"location"];
-      newHotel.stars = hotel[@"stars"];
+    NSError *jsonError;
+    NSDictionary *rootObject = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&jsonError];
+    
+    if (jsonError) {
+      return;
+    }
+    
+    if([rootObject isKindOfClass:[NSDictionary class]]) {
+      NSDictionary *hotels = rootObject[@"Hotels"];
       
-      NSDictionary *rooms = hotel[@"rooms"];
-      
-      for (id room in rooms) {
-        Room *newRoom = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+      for (id hotel in hotels) {
+        Hotel *newHotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.managedObjectContext];
+        newHotel.name = hotel[@"name"];
+        newHotel.location = hotel[@"location"];
+        newHotel.stars = hotel[@"stars"];
         
-        newRoom.number = room[@"number"];
-        newRoom.beds = room[@"beds"];
-        newRoom.rate = room[@"rate"];
-        newRoom.hotel = newHotel;
+        NSDictionary *rooms = hotel[@"rooms"];
         
-        //Save Room
-        NSError *saveRoomError;
-        BOOL roomResult = [self.managedObjectContext save:&saveRoomError];
-        if (!roomResult) {
-          NSLog(@" %@",saveRoomError.localizedDescription);
+        for (id room in rooms) {
+          Room *newRoom = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+          
+          newRoom.number = room[@"number"];
+          newRoom.beds = room[@"beds"];
+          newRoom.rate = room[@"rate"];
+          newRoom.hotel = newHotel;
+          
+          //Save Room
+          NSError *saveRoomError;
+          BOOL roomResult = [self.managedObjectContext save:&saveRoomError];
+          if (!roomResult) {
+            NSLog(@" %@",saveRoomError.localizedDescription);
+          }
+          [newHotel addRoomsObject:newRoom];
         }
-        [newHotel addRoomsObject:newRoom];
+        
+        //Save Hotel
+        NSError *saveHotelError;
+        BOOL hotelResult = [self.managedObjectContext save:&saveHotelError];
+        if (!hotelResult) {
+          NSLog(@" %@",saveHotelError.localizedDescription);
+        }
       }
-      
-      //Save Hotel
-      NSError *saveHotelError;
-      BOOL hotelResult = [self.managedObjectContext save:&saveHotelError];
-      if (!hotelResult) {
-        NSLog(@" %@",saveHotelError.localizedDescription);
-      }
-      
     }
   }
 }

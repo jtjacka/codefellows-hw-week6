@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Hotel.h"
 
-@interface RoomListViewController : UIViewController
+@interface RoomListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) Hotel *currentHotel;
 
 @end
