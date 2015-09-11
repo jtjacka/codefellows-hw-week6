@@ -36,7 +36,6 @@
     [rootView addConstraints:tableViewVerticalConstraints];
     NSArray *tableViewHorizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableView]|" options:0 metrics:nil views:views];
     [rootView addConstraints:tableViewHorizontalConstraints];
-    //Copied from Brad
     
     self.view = rootView;
 }

@@ -42,6 +42,7 @@
 /* Begin PBXFileReference section */
 		1F13D19D1BA20FD800FBDF80 /* ReservationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationService.h; sourceTree = "<group>"; };
 		1F13D19E1BA20FD800FBDF80 /* ReservationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationService.m; sourceTree = "<group>"; };
+		1F13D1A01BA21EA000FBDF80 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1F3E9DD91B9E28E600EDFFDB /* HotelFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F3E9DDD1B9E28E600EDFFDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F3E9DDE1B9E28E600EDFFDB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -348,6 +349,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1F3E9DEF1B9E28E600EDFFDB /* Base */,
+				1F13D1A01BA21EA000FBDF80 /* fr */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
