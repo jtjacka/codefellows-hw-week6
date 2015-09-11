@@ -23,6 +23,8 @@
 		1F41FF2B1BA0D24100545CAD /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F41FF2A1BA0D24100545CAD /* CoreDataStack.m */; };
 		1F41FF2E1BA0D2C800545CAD /* HotelService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F41FF2D1BA0D2C800545CAD /* HotelService.m */; };
 		1F41FF311BA0D54A00545CAD /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F41FF301BA0D54A00545CAD /* MainMenuViewController.m */; };
+		1FC6D9EF1BA268D900EC7B34 /* SelectEndDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6D9EE1BA268D900EC7B34 /* SelectEndDateViewController.m */; };
+		1FC6D9F21BA2983A00EC7B34 /* AvaliableRoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6D9F11BA2983A00EC7B34 /* AvaliableRoomsViewController.m */; };
 		1FF290091B9F6A760030ADDC /* RoomListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF290081B9F6A760030ADDC /* RoomListViewController.m */; };
 		1FF290171B9FC4920030ADDC /* hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FF290161B9FC4920030ADDC /* hotels.json */; };
 		7B9434E41BA13B7200957CBE /* BookRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9434E31BA13B7200957CBE /* BookRoomViewController.m */; };
@@ -72,6 +74,10 @@
 		1F41FF2D1BA0D2C800545CAD /* HotelService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelService.m; sourceTree = "<group>"; };
 		1F41FF2F1BA0D54A00545CAD /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		1F41FF301BA0D54A00545CAD /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		1FC6D9ED1BA268D900EC7B34 /* SelectEndDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectEndDateViewController.h; sourceTree = "<group>"; };
+		1FC6D9EE1BA268D900EC7B34 /* SelectEndDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectEndDateViewController.m; sourceTree = "<group>"; };
+		1FC6D9F01BA2983A00EC7B34 /* AvaliableRoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvaliableRoomsViewController.h; sourceTree = "<group>"; };
+		1FC6D9F11BA2983A00EC7B34 /* AvaliableRoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvaliableRoomsViewController.m; sourceTree = "<group>"; };
 		1FF290071B9F6A760030ADDC /* RoomListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomListViewController.h; sourceTree = "<group>"; };
 		1FF290081B9F6A760030ADDC /* RoomListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomListViewController.m; sourceTree = "<group>"; };
 		1FF290161B9FC4920030ADDC /* hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hotels.json; sourceTree = "<group>"; };
@@ -203,6 +209,10 @@
 				7B9434E31BA13B7200957CBE /* BookRoomViewController.m */,
 				7B9434E51BA13BB400957CBE /* ReservationLookupViewController.h */,
 				7B9434E61BA13BB400957CBE /* ReservationLookupViewController.m */,
+				1FC6D9ED1BA268D900EC7B34 /* SelectEndDateViewController.h */,
+				1FC6D9EE1BA268D900EC7B34 /* SelectEndDateViewController.m */,
+				1FC6D9F01BA2983A00EC7B34 /* AvaliableRoomsViewController.h */,
+				1FC6D9F11BA2983A00EC7B34 /* AvaliableRoomsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -312,6 +322,7 @@
 				1F13D19F1BA20FD800FBDF80 /* ReservationService.m in Sources */,
 				1FF290091B9F6A760030ADDC /* RoomListViewController.m in Sources */,
 				1F3E9DE51B9E28E600EDFFDB /* HotelFinder.xcdatamodeld in Sources */,
+				1FC6D9F21BA2983A00EC7B34 /* AvaliableRoomsViewController.m in Sources */,
 				1F41FF311BA0D54A00545CAD /* MainMenuViewController.m in Sources */,
 				1F41FF1F1BA09EC500545CAD /* Guest.m in Sources */,
 				1F3E9DE21B9E28E600EDFFDB /* AppDelegate.m in Sources */,
@@ -319,6 +330,7 @@
 				1F3E9DE81B9E28E600EDFFDB /* ViewController.m in Sources */,
 				1F41FF281BA0A84300545CAD /* Reservation.m in Sources */,
 				1F3E9DDF1B9E28E600EDFFDB /* main.m in Sources */,
+				1FC6D9EF1BA268D900EC7B34 /* SelectEndDateViewController.m in Sources */,
 				7B9434E71BA13BB400957CBE /* ReservationLookupViewController.m in Sources */,
 				1F41FF201BA09EC500545CAD /* Room.m in Sources */,
 				1F41FF2E1BA0D2C800545CAD /* HotelService.m in Sources */,
