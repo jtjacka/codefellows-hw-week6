@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "Reservation.h"
+#import "Guest.h"
 
 @interface CoreDataStack : NSObject
 
@@ -17,5 +19,8 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+-(Reservation *)createNewReservation;
+-(Guest *)createNewGuest;
+-(BOOL) saveCompleteReservation:(Reservation *)reservation guestInfo:(Guest *)guest;
 
 @end

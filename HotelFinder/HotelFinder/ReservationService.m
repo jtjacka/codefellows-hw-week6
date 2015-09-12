@@ -9,7 +9,6 @@
 #import "ReservationService.h"
 #import "AppDelegate.h"
 #import "CoreDataStack.h"
-#import "Reservation.h"
 
 @implementation ReservationService
 
@@ -46,5 +45,24 @@
   
     return finalResults;
 }
+
++ (BOOL) saveReservation:(Reservation *)newReservation reservationGuestFirstName:(NSString *)firstName reservationLastName:(NSString *)lastName {
+    
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    
+    Guest* newGuest = [appDelegate.coreDataStack createNewGuest];
+    
+    newGuest.firstName = firstName;
+    newGuest.lastName = lastName;
+    
+    BOOL result = [appDelegate.coreDataStack saveCompleteReservation:newReservation guestInfo:newGuest];
+    
+    if (result) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
+
 
 @end

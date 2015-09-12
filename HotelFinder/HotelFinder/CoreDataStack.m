@@ -108,6 +108,41 @@
     }
 }
 
+#pragma mark - Create New Reservation
+-(Reservation *)createNewReservation {
+    Reservation *newReservation = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:self.managedObjectContext];
+    
+    return newReservation;
+}
+
+#pragma mark - Create New Guest
+-(Guest *)createNewGuest {
+    Guest *newGuest = [NSEntityDescription insertNewObjectForEntityForName:@"Guest" inManagedObjectContext:self.managedObjectContext];
+    
+    return newGuest;
+}
+
+-(BOOL) saveCompleteReservation:(Reservation *)reservation guestInfo:(Guest *)guest {
+    
+    guest.reservation = reservation;
+    reservation.guest = guest;
+    
+    NSLog(@"Reservation to be saved: %@", reservation);
+    NSLog(@"Guest to be saved %@" , guest);
+    
+    NSError *reservationError;
+    BOOL reservationResult = [self.managedObjectContext save:&reservationError];
+    
+    NSError *guestError;
+    BOOL guestResult = [self.managedObjectContext save:&guestError];
+    
+    if(reservationResult && guestResult) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
+
 #pragma mark - Seed Core Data If Needed
 -(void) seedCoreDataIfNeeded {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];

@@ -1,9 +1,9 @@
 //
 //  Reservation.h
-//  
+//  HotelFinder
 //
-//  Created by Jeffrey Jacka on 9/9/15.
-//
+//  Created by Jeff Jacka on 9/11/15.
+//  Copyright (c) 2015 Jeffrey Jacka. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -13,8 +13,8 @@
 
 @interface Reservation : NSManagedObject
 
-@property (nonatomic, retain) NSDate * startDate;
 @property (nonatomic, retain) NSDate * endDate;
+@property (nonatomic, retain) NSDate * startDate;
 @property (nonatomic, retain) Guest *guest;
 @property (nonatomic, retain) Room *room;
 

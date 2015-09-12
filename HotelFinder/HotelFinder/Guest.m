@@ -1,9 +1,9 @@
 //
 //  Guest.m
-//  
+//  HotelFinder
 //
-//  Created by Jeffrey Jacka on 9/9/15.
-//
+//  Created by Jeff Jacka on 9/11/15.
+//  Copyright (c) 2015 Jeffrey Jacka. All rights reserved.
 //
 
 #import "Guest.h"
@@ -12,7 +12,8 @@
 
 @implementation Guest
 
-@dynamic name;
+@dynamic firstName;
+@dynamic lastName;
 @dynamic reservation;
 
 @end

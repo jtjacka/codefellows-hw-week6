@@ -11,6 +11,8 @@
 #import "Room.h"
 #import "ConfirmReservationViewController.h"
 #import "Reservation.h"
+#import "CoreDataStack.h"
+#import "AppDelegate.h"
 
 @interface AvaliableRoomsViewController ()
 
@@ -75,15 +77,18 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   ConfirmReservationViewController *destinationVC = [[ConfirmReservationViewController alloc] init];
+    
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
   
   Room *selectedRoom = self.availableRooms[indexPath.row];
   
-  Reservation *newReservation = [[Reservation alloc] init];
+    Reservation *newReservation = appDelegate.coreDataStack.createNewReservation;
+    
   [newReservation setStartDate:self.startDate];
   [newReservation setEndDate:self.endDate];
   [newReservation setRoom:selectedRoom];
   
-  destinationVC.newReservation = newReservation;
+  destinationVC.currentReservation = newReservation;
   
   [self.navigationController pushViewController:destinationVC animated:true];
   
