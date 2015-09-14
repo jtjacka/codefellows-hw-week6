@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="15A278b" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Guest" representedClassName="Guest" syncable="YES">
-        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="reservation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reservation" inverseName="guest" inverseEntity="Reservation" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="reservation" optional="YES" maxCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Reservation" inverseName="guest" inverseEntity="Reservation" syncable="YES"/>
     </entity>
     <entity name="Hotel" representedClassName="Hotel" syncable="YES">
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
@@ -22,12 +21,12 @@
         <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="rate" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="hotel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hotel" inverseName="rooms" inverseEntity="Hotel" syncable="YES"/>
-        <relationship name="reservation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reservation" inverseName="room" inverseEntity="Reservation" syncable="YES"/>
+        <relationship name="reservation" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Reservation" inverseName="room" inverseEntity="Reservation" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Hotel" positionX="7605" positionY="-735" width="128" height="105"/>
-        <element name="Reservation" positionX="8073" positionY="-460" width="128" height="103"/>
-        <element name="Guest" positionX="8262" positionY="-370" width="128" height="88"/>
-        <element name="Room" positionX="7857" positionY="-576" width="128" height="118"/>
+        <element name="Guest" positionX="8883" positionY="-556" width="128" height="75"/>
+        <element name="Hotel" positionX="8172" positionY="-855" width="128" height="105"/>
+        <element name="Reservation" positionX="8676" positionY="-580" width="128" height="105"/>
+        <element name="Room" positionX="8433" positionY="-720" width="128" height="120"/>
     </elements>
 </model>
