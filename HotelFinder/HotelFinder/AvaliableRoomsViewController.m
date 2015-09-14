@@ -13,15 +13,20 @@
 #import "Reservation.h"
 #import "CoreDataStack.h"
 #import "AppDelegate.h"
+#import "Hotel.h"
 
 @interface AvaliableRoomsViewController ()
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSArray *availableRooms;
+@property (strong, nonatomic) NSArray *hotels;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
 @implementation AvaliableRoomsViewController
+
+@synthesize fetchedResultsController = _fetchedResultsController;
 
 -(void) loadView {
   
@@ -41,6 +46,7 @@
   [rootView addConstraints:tableViewHorizontalConstraints];
   
   self.availableRooms = [ReservationService avaliableRoomsForStartDate:self.startDate endDate:self.endDate];
+  [self retrieveHotelsFromReservation];
   
   self.tableView.dataSource = self;
   self.tableView.delegate = self;
@@ -61,8 +67,34 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)retrieveHotelsFromReservation {
+  self.hotels = [self.availableRooms valueForKeyPath:@"@distinctUnionOfObjects.hotel"];
+}
+
+
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  
+  return self.hotels.count;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  Hotel  *currentHotel = self.hotels[section];
+  
+  return currentHotel.name;
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return self.availableRooms.count;
+  Hotel  *currentHotel = self.hotels[section];
+  NSMutableArray *roomsInSection = [[NSMutableArray alloc] init];
+  
+  for (Room *index in self.availableRooms) {
+    if([currentHotel isEqual:index.hotel]) {
+      [roomsInSection addObject:index];
+    }
+  }
+  
+  return roomsInSection.count;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
