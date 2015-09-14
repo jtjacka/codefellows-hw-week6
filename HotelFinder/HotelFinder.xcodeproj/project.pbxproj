@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F13D19F1BA20FD800FBDF80 /* ReservationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F13D19E1BA20FD800FBDF80 /* ReservationService.m */; };
 		1F38F4911BA7326700F5F6C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F38F4901BA7326700F5F6C9 /* GoogleService-Info.plist */; };
+		1F38F49A1BA739C100F5F6C9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F38F49C1BA739C100F5F6C9 /* Localizable.strings */; };
 		1F3E9DDF1B9E28E600EDFFDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3E9DDE1B9E28E600EDFFDB /* main.m */; };
 		1F3E9DE21B9E28E600EDFFDB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3E9DE11B9E28E600EDFFDB /* AppDelegate.m */; };
 		1F3E9DE51B9E28E600EDFFDB /* HotelFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F3E9DE31B9E28E600EDFFDB /* HotelFinder.xcdatamodeld */; };
@@ -50,6 +51,8 @@
 		1F13D19E1BA20FD800FBDF80 /* ReservationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationService.m; sourceTree = "<group>"; };
 		1F13D1A01BA21EA000FBDF80 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1F38F4901BA7326700F5F6C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1F38F49B1BA739C100F5F6C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1F38F49D1BA739C200F5F6C9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1F3E9DD91B9E28E600EDFFDB /* HotelFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F3E9DDD1B9E28E600EDFFDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F3E9DDE1B9E28E600EDFFDB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -183,6 +186,7 @@
 		1F3E9E051B9E439D00EDFFDB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1F38F49C1BA739C100F5F6C9 /* Localizable.strings */,
 				1F13D19D1BA20FD800FBDF80 /* ReservationService.h */,
 				1F13D19E1BA20FD800FBDF80 /* ReservationService.m */,
 				1F41FF2C1BA0D2C800545CAD /* HotelService.h */,
@@ -317,6 +321,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 1F3E9DD01B9E28E600EDFFDB;
 			productRefGroup = 1F3E9DDA1B9E28E600EDFFDB /* Products */;
@@ -334,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F38F49A1BA739C100F5F6C9 /* Localizable.strings in Resources */,
 				1FF290171B9FC4920030ADDC /* hotels.json in Resources */,
 				1F38F4911BA7326700F5F6C9 /* GoogleService-Info.plist in Resources */,
 				1F3E9DF01B9E28E600EDFFDB /* LaunchScreen.xib in Resources */,
@@ -430,6 +436,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1F38F49C1BA739C100F5F6C9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F38F49B1BA739C100F5F6C9 /* Base */,
+				1F38F49D1BA739C200F5F6C9 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		1F3E9DEE1B9E28E600EDFFDB /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

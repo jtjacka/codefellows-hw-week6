@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "RoomListViewController.h"
 #import "CoreDataStack.h"
+#import <Google/Analytics.h>
 
 @interface HoteListViewController ()
 
@@ -19,6 +20,12 @@
 @end
 
 @implementation HoteListViewController
+
+-(void)viewDidAppear:(BOOL)animated {
+  id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+  [tracker set:kGAIScreenName value:@"Hotel List"];
+  [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
 
 
 - (void)viewDidLoad {

@@ -23,8 +23,8 @@
 
 -(void)loadView {
     UIView *rootView = [[UIView alloc] init];
-    
-    self.menuTitles = @[@"Browse Hotels", @"Book A Room", @"Look Up Reservation"];
+  
+    self.menuTitles = @[NSLocalizedString(@"Browse Hotels", "Browse for a hotel"), NSLocalizedString(@"Book A Room", "Search for avaliable rooms to reserve"), NSLocalizedString(@"Look Up Reservation", "Look up a reservation previously made through the app.")];
     
     self.tableView = [[UITableView alloc] initWithFrame:rootView.frame style:UITableViewStylePlain];
     [self.tableView setTranslatesAutoresizingMaskIntoConstraints:false];
