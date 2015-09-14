@@ -31,6 +31,7 @@
 		7B4DD4371BA3C1DA00519A5C /* Guest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4DD4361BA3C1DA00519A5C /* Guest.m */; };
 		7B9434E41BA13B7200957CBE /* BookRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9434E31BA13B7200957CBE /* BookRoomViewController.m */; };
 		7B9434E71BA13BB400957CBE /* ReservationLookupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9434E61BA13BB400957CBE /* ReservationLookupViewController.m */; };
+		FB2145C255C7D0B1EC6BB653 /* libPods-HotelFinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7577D99C0436A2C79A1716E3 /* libPods-HotelFinder.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		1F41FF2F1BA0D54A00545CAD /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		1F41FF301BA0D54A00545CAD /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		1F64D51C1BA72A43009F03A4 /* ReservationServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationServiceTests.m; sourceTree = "<group>"; };
+		1F80192AAEB4D2B3BAFADA2C /* Pods-HotelFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotelFinder/Pods-HotelFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		1FC6D9ED1BA268D900EC7B34 /* SelectEndDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectEndDateViewController.h; sourceTree = "<group>"; };
 		1FC6D9EE1BA268D900EC7B34 /* SelectEndDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectEndDateViewController.m; sourceTree = "<group>"; };
 		1FC6D9F01BA2983A00EC7B34 /* AvaliableRoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvaliableRoomsViewController.h; sourceTree = "<group>"; };
@@ -78,6 +80,8 @@
 		1FF290071B9F6A760030ADDC /* RoomListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomListViewController.h; sourceTree = "<group>"; };
 		1FF290081B9F6A760030ADDC /* RoomListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomListViewController.m; sourceTree = "<group>"; };
 		1FF290161B9FC4920030ADDC /* hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hotels.json; sourceTree = "<group>"; };
+		2F823D5DA7A4D30672A54031 /* Pods-HotelFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotelFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotelFinder/Pods-HotelFinder.release.xcconfig"; sourceTree = "<group>"; };
+		7577D99C0436A2C79A1716E3 /* libPods-HotelFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HotelFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B4DD42C1BA3C1DA00519A5C /* Hotel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hotel.h; sourceTree = "<group>"; };
 		7B4DD42D1BA3C1DA00519A5C /* Hotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hotel.m; sourceTree = "<group>"; };
 		7B4DD42F1BA3C1DA00519A5C /* Reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reservation.h; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB2145C255C7D0B1EC6BB653 /* libPods-HotelFinder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +121,8 @@
 				1F3E9DDB1B9E28E600EDFFDB /* HotelFinder */,
 				1F3E9DF81B9E28E600EDFFDB /* HotelFinderTests */,
 				1F3E9DDA1B9E28E600EDFFDB /* Products */,
+				BC9F4B41EF9166DD5CCDD316 /* Pods */,
+				B8F44A172FC4FC26652D42C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -225,6 +232,23 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		B8F44A172FC4FC26652D42C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7577D99C0436A2C79A1716E3 /* libPods-HotelFinder.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC9F4B41EF9166DD5CCDD316 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F80192AAEB4D2B3BAFADA2C /* Pods-HotelFinder.debug.xcconfig */,
+				2F823D5DA7A4D30672A54031 /* Pods-HotelFinder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,9 +256,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F3E9DFF1B9E28E600EDFFDB /* Build configuration list for PBXNativeTarget "HotelFinder" */;
 			buildPhases = (
+				EA3F21640EF8A60CD8016859 /* Check Pods Manifest.lock */,
 				1F3E9DD51B9E28E600EDFFDB /* Sources */,
 				1F3E9DD61B9E28E600EDFFDB /* Frameworks */,
 				1F3E9DD71B9E28E600EDFFDB /* Resources */,
+				8BF7215DB8C6B05623D49266 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,6 +345,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8BF7215DB8C6B05623D49266 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HotelFinder/Pods-HotelFinder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA3F21640EF8A60CD8016859 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F3E9DD51B9E28E600EDFFDB /* Sources */ = {
@@ -463,6 +522,7 @@
 		};
 		1F3E9E001B9E28E600EDFFDB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F80192AAEB4D2B3BAFADA2C /* Pods-HotelFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HotelFinder/Info.plist;
@@ -473,6 +533,7 @@
 		};
 		1F3E9E011B9E28E600EDFFDB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F823D5DA7A4D30672A54031 /* Pods-HotelFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HotelFinder/Info.plist;

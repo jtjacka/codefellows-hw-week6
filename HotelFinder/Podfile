@@ -1,0 +1,13 @@
+
+# platform :ios, ‘8.0’
+
+target 'HotelFinder' do
+
+pod 'Google/Analytics', '~> 1.0.0'
+
+end
+
+target 'HotelFinderTests' do
+
+end
+
