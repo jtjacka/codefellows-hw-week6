@@ -10,7 +10,7 @@
 #import "HoteListViewController.h"
 #import "BookRoomViewController.h"
 #import "ReservationLookupViewController.h"
-
+#import <Google/Analytics.h>
 
 @interface MainMenuViewController ()
 
@@ -38,6 +38,12 @@
     [rootView addConstraints:tableViewHorizontalConstraints];
     
     self.view = rootView;
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+  id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+  [tracker set:kGAIScreenName value:@"Main Menu"];
+  [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)viewDidLoad {
