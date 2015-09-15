@@ -118,7 +118,6 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  NSLog(@"Number of Sections: %lu", (unsigned long)_fetchedResultsController.sections.count);
   return _fetchedResultsController.sections.count;
 }
 
@@ -126,7 +125,6 @@
  numberOfRowsInSection:(NSInteger)section {
   id  sectionInfo =
   [[_fetchedResultsController sections] objectAtIndex:section];
-  NSLog(@"Number of rows in section: %lu", (unsigned long)[sectionInfo numberOfObjects]);
   return [sectionInfo numberOfObjects];
 }
 
