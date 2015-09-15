@@ -79,25 +79,32 @@
   }
   
   //Logic copied from AvaliableRoomService
-  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"startDate <= %@ AND endDate >= %@", self.startDate, self.endDate];
   
-  fetchRequest.predicate = predicate;
-
-  NSEntityDescription *entity = [NSEntityDescription
-                                 entityForName:@"Reservation" inManagedObjectContext:appDelegate.coreDataStack.managedObjectContext];
+  NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Reservation"];
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"startDate <= %@ AND endDate >= %@", self.endDate, self.startDate];
   
-  [fetchRequest setEntity:entity];
+  request.predicate = predicate;
+  NSError *fetchError;
+  NSArray *results = [appDelegate.coreDataStack.managedObjectContext executeFetchRequest:request error:&fetchError];
   
-  NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"room.hotel" ascending:YES];
-  [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+  NSMutableArray *reservedRooms = [[NSMutableArray alloc] init];
+  for (Reservation *reservation in results) {
+    [reservedRooms addObject:reservation.room];
+  }
   
-  [fetchRequest setFetchBatchSize:100];
+  NSFetchRequest *finalRequest = [NSFetchRequest fetchRequestWithEntityName:@"Room"];
+  NSPredicate *finalPredicate = [NSPredicate predicateWithFormat:@"NOT self IN %@", reservedRooms];
+  finalRequest.predicate = finalPredicate;
+  
+  NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES];
+  [finalRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+  
+  [finalRequest setFetchBatchSize:100];
   
   NSFetchedResultsController *theFetchedResultsController =
-  [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                      managedObjectContext:appDelegate.coreDataStack.managedObjectContext sectionNameKeyPath:nil
-                                                 cacheName:@"Root"];
+  [[NSFetchedResultsController alloc] initWithFetchRequest:finalRequest
+                                      managedObjectContext:appDelegate.coreDataStack.managedObjectContext sectionNameKeyPath:@"hotel.name"
+                                                 cacheName:nil];
   self.fetchedResultsController = theFetchedResultsController;
   _fetchedResultsController.delegate = self;
   
@@ -110,10 +117,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  NSLog(@"Number of Sections: %lu", (unsigned long)_fetchedResultsController.sections.count);
+  return _fetchedResultsController.sections.count;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
   id  sectionInfo =
   [[_fetchedResultsController sections] objectAtIndex:section];
+  NSLog(@"Number of rows in section: %lu", (unsigned long)[sectionInfo numberOfObjects]);
   return [sectionInfo numberOfObjects];
 }
 
@@ -134,6 +147,17 @@
   
   return cell;
 }
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+  NSArray *objects = [sectionInfo objects];
+  Room *managedObject = [objects objectAtIndex:0];
+  
+  NSString *hotelName = managedObject.hotel.name;
+  
+  return hotelName;
+}
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   ConfirmReservationViewController *destinationVC = [[ConfirmReservationViewController alloc] init];

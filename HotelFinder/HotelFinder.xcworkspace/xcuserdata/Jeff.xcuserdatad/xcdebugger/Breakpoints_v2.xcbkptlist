@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelFinder/AvaliableRoomsViewController.m"
-            timestampString = "463986432.859775"
+            timestampString = "464030859.187524"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "-configureCell:atIndexPath:"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "-numberOfSectionsInTableView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelFinder/AvaliableRoomsViewController.m"
-            timestampString = "463986432.859775"
+            timestampString = "464030859.187524"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "-tableView:titleForHeaderInSection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelFinder/AvaliableRoomsViewController.m"
-            timestampString = "463986432.859775"
+            timestampString = "464030894.734575"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "-tableView:numberOfRowsInSection:"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "-tableView:titleForHeaderInSection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HotelFinder/AvaliableRoomsViewController.m"
-            timestampString = "463986432.859775"
+            timestampString = "464030899.756888"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "-fetchedResultsController"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "-tableView:titleForHeaderInSection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
